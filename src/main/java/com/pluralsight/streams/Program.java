@@ -1,4 +1,4 @@
-package com.pluralsight.loops;
+package com.pluralsight.streams;
 
 import com.pluralsight.Person;
 
@@ -33,27 +33,17 @@ public class Program {
 
     public static void makePerson(List<Person> people) {
 
-        Person person1 = new Person("Katrina", "Ross", 24);
-        Person person2 = new Person("Madge", "Velazquez", 19);
-        Person person3 = new Person("Kelvin", "Bryan", 34);
-        Person person4 = new Person("Wm", "Kelvin", 51);
-        Person person5 = new Person("Dave", "Knox", 72);
-        Person person6 = new Person("Ruben", "Davila", 4);
-        Person person7 = new Person("Jasmine", "Sparks", 42);
-        Person person8 = new Person("Esmeralda", "Nolan", 23);
-        Person person9 = new Person("Vonda", "Riley", 81);
-        Person person10 = new Person("Kristofer", "Wilkinson", 38);
+        people.add(new Person("Katrina", "Ross", 24));
+        people.add(new Person("Madge", "Velazquez", 19));
+        people.add(new Person("Kelvin", "Bryan", 34));
+        people.add(new Person("Wm", "Kelvin", 51));
+        people.add(new Person("Dave", "Knox", 72));
+        people.add(new Person("Ruben", "Davila", 4));
+        people.add(new Person("Jasmine", "Sparks", 42));
+        people.add(new Person("Esmeralda", "Nolan", 23));
+        people.add(new Person("Vonda", "Riley", 81));
+        people.add(new Person("Kristofer", "Wilkinson", 38));
 
-        people.add(person1);
-        people.add(person2);
-        people.add(person3);
-        people.add(person4);
-        people.add(person5);
-        people.add(person6);
-        people.add(person7);
-        people.add(person8);
-        people.add(person9);
-        people.add(person10);
     }
 
     public static void searchPerson(List<Person> people, List<Person> searchedPeople, String nameSearched) {
