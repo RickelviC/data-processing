@@ -8,8 +8,8 @@ public class Program {
 
     public static void main(String[] args) {
 
-         List<Person> people = new ArrayList<>();
-         List<Person> searchedPeople = new ArrayList<>();
+        List<Person> people = new ArrayList<>();
+        List<Person> searchedPeople = new ArrayList<>();
 
         makePerson(people);
 
@@ -18,9 +18,13 @@ public class Program {
         System.out.print("enter the name you want to search for: ");
         String nameSearched = scanner.nextLine();
 
-        searchPerson(people,searchedPeople,nameSearched);
+        searchPerson(people, searchedPeople, nameSearched);
 
-        ageSearch(people);
+        ageAverage(people);
+
+        findOldestAge(people);
+
+        findYoungestAge(people);
 
         scanner.close();
     }
@@ -30,7 +34,7 @@ public class Program {
         Person person1 = new Person("Katrina", "Ross", 24);
         Person person2 = new Person("Madge", "Velazquez", 19);
         Person person3 = new Person("Kelvin", "Bryan", 34);
-        Person person4 = new Person("Wm", "Merritt", 51);
+        Person person4 = new Person("Wm", "Kelvin", 51);
         Person person5 = new Person("Dave", "Knox", 72);
         Person person6 = new Person("Ruben", "Davila", 4);
         Person person7 = new Person("Jasmine", "Sparks", 42);
@@ -50,7 +54,7 @@ public class Program {
         people.add(person10);
     }
 
-    public static void searchPerson(List<Person> people, List<Person> searchedPeople, String nameSearched){
+    public static void searchPerson(List<Person> people, List<Person> searchedPeople, String nameSearched) {
 
         for (Person person : people) {
             if (nameSearched.equalsIgnoreCase(person.getFirstName()) ||
@@ -63,7 +67,7 @@ public class Program {
         }
     }
 
-    public static void ageSearch(List<Person> people){
+    public static void ageAverage(List<Person> people) {
         double ageAverage = 0;
         int ageTotal = 0;
         int counter = 0;
@@ -71,8 +75,28 @@ public class Program {
             counter++;
             ageTotal += person.getAge();
         }
-        ageAverage = (double) ageTotal /counter;
+        ageAverage = (double) ageTotal / counter;
 
         System.out.println("average age is: " + ageAverage);
+    }
+
+    private static void findOldestAge(List<Person> people) {
+        int maxAge = Integer.MIN_VALUE;
+        for (Person person : people) {
+            if (person.getAge() > maxAge) {
+                maxAge = person.getAge();
+            }
+        }
+        System.out.println("the oldest age is: " + maxAge);
+    }
+
+    private static void findYoungestAge(List<Person> people) {
+        int maxAge = Integer.MAX_VALUE;
+        for (Person person : people) {
+            if (person.getAge() < maxAge) {
+                maxAge = person.getAge();
+            }
+        }
+        System.out.println("the Youngest age is: " + maxAge);
     }
 }
