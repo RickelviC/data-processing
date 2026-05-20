@@ -48,7 +48,10 @@ public class Program {
 
     public static void searchPerson(List<Person> people, List<Person> searchedPeople, String nameSearched) {
 
-        for (Person person : people) {
+        List<Person> personList = people.stream().filter(person -> (nameSearched.equalsIgnoreCase(person.getFirstName()) ||
+                        nameSearched.equalsIgnoreCase(person.getLastName()))).toList() ;
+
+/*        for (Person person : people) {
             if (nameSearched.equalsIgnoreCase(person.getFirstName()) ||
                     nameSearched.equalsIgnoreCase(person.getLastName())) {
                 searchedPeople.add(person);
@@ -56,7 +59,7 @@ public class Program {
         }
         for (Person searchedPerson : searchedPeople) {
             System.out.println(searchedPerson);
-        }
+        }*/
     }
 
     public static void ageAverage(List<Person> people) {
