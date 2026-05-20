@@ -86,7 +86,7 @@ public class Program {
 
     private static void findOldestAge(List<Person> people) {
 
-        people.stream().map(Person::getAge).sorted().toList().get(people.size() - 1);
+        //people.stream().map(Person::getAge).sorted().toList().get(people.size() - 1);
         /*int maxAge = Integer.MIN_VALUE;
         for (Person person : people) {
             if (person.getAge() > maxAge) {
